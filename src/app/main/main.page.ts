@@ -88,9 +88,9 @@ export class MainPage implements OnInit {
 
   calculatePrice(product: Product): number {
     let adjustedPrice = product.price;
-    if (product.selectedSize === 'small') {
+    if (product.selectedSize === 'pequeño') {
       adjustedPrice -= 1000;
-    } else if (product.selectedSize === 'large') {
+    } else if (product.selectedSize === 'grande') {
       adjustedPrice += 1000;
     }
     return adjustedPrice;

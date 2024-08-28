@@ -12,13 +12,13 @@ import { IonicModule } from '@ionic/angular';
 })
 export class CarroComprasPage {
   items = [
-    { name: 'Café Latte', price: 3.50, quantity: 2 },
-    { name: 'Cappuccino', price: 4.00, quantity: 1 },
+    { name: 'Café Latte', price: 6000, quantity: 2 },
+    { name: 'Cappuccino', price: 7000, quantity: 1 },
   ];
 
   constructor() { }
 
   getTotalPrice() {
-    return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return this.items.reduce((total, item) => total + (item.price * item.quantity), 0 );
   }
 }
