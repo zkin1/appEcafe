@@ -7,6 +7,10 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   standalone: true,
   imports: [IonApp, IonRouterOutlet],
 })
-export class AppComponent {
-  constructor() {}
+export class AppComponent implements OnInit {
+  currentPage: string = 'main';
+
+  constructor(private router: Router) {
+    addIcons({ cafeOutline, cartOutline, personOutline });
+  }
 }
