@@ -1,0 +1,44 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let product of products; let i = index">
+        <ion-card>
+          <img [src]="product.image" [alt]="product.name"/>
+          <ion-card-header>
+            <ion-card-title>{{ product.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ product.description }}</p>
+            <ion-text color="primary">
+              <h2>{{ calculatePrice(product) | currency:'CLP':'symbol-narrow':'1.0-0' }}</h2>
+            </ion-text>
+            <ion-button expand="block" (click)="toggleOptions(i)">Personalizar y Añadir</ion-button>
+          </ion-card-content>
+        </ion-card>
+        
+        <ion-card *ngIf="product.showOptions" class="options-card" [@slideInOut]>
+          <ion-card-content>
+            <ion-item>
+              <ion-label>Tamaño</ion-label>
+              <ion-select [(ngModel)]="product.selectedSize" (ionChange)="updatePrice(product)" interface="action-sheet">
+                <ion-select-option value="small">Pequeño (-$1.000)</ion-select-option>
+                <ion-select-option value="medium">Mediano</ion-select-option>
+                <ion-select-option value="large">Grande (+$1.000)</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label>Tipo de leche</ion-label>
+              <ion-select [(ngModel)]="product.selectedMilk" interface="action-sheet">
+                <ion-select-option value="regular">Regular</ion-select-option>
+                <ion-select-option value="skim">Descremada</ion-select-option>
+                <ion-select-option value="soy">Soya</ion-select-option>
+                <ion-select-option value="almond">Almendra</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-button expand="block" (click)="addToCart(product)">Añadir al Carrito</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

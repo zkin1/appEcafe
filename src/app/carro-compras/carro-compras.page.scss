@@ -1,0 +1,67 @@
+:host {
+    --color-background: #ebf5fb;
+    --color-text: #1c2833;
+    --color-light: #f7f9f9;
+    --color-border: #E0D8D3;
+    --color-button: #1c2833;
+    --color-price: #1d8348;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  ion-content {
+    --background: var(--color-background);
+  }
+  
+  h1 {
+    color: var(--color-text);
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  ion-list {
+    background: transparent;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  ion-item {
+    --background: var(--color-light);
+    --border-color: var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    animation: fadeInUp 0.5s ease-out;
+  
+    h2 {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+  
+    p {
+      color: var(--color-price);
+    }
+  }
+  
+  ion-badge {
+    --background: var(--color-button);
+    --color: var(--color-light);
+  }
+  
+  ion-button {
+    --background: var(--color-button);
+    --color: var(--color-light);
+    margin-top: 20px;
+    font-weight: 500;
+    text-transform: none;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
